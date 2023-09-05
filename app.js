@@ -65,7 +65,10 @@ function searchByName(people) {
 }
 function searchByTraits(people) {
     const traitsTOSearchForString = prompt('Please enter one of the listed traits of the person you are searching for.');
-    const eyeColorToSearchFor = prompt('Please Enter desired Eye color of the person you are searching for.');
+    const eyeColorToSearchfor = prompt('Please Enter desired Eye color of the person you are searching for.');
+    const heightToSearchfortrait = parseInt(heightToSearchfortrait);
+    const weightToSearchForTrait = parseInt(weightToSearchForTrait);
+    
 }
 
 function mainMenu(person, people) {
