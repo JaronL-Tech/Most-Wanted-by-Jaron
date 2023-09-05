@@ -68,7 +68,10 @@ function searchByTraits(people) {
     const eyeColorToSearchfor = prompt('Please Enter desired Eye color of the person you are searching for.');
     const heightToSearchfortrait = parseInt(heightToSearchfortrait);
     const weightToSearchForTrait = parseInt(weightToSearchForTrait);
-    
+    const genderToSearchForTrait = prompt("Please enter the gender of the person you are looking for.")
+    const traitsFilterResults = people.filter(person => person.traits.toLowerCase() === traitsTOSearchForString.toLowerCase() && heightToSearchfortrait.toLowerCase() === eyeColorToSearchfor.toLowerCase() === weightToSearchForTrait.toLowerCase() === genderToSearchForTrait.toLowerCase());
+    return traitsFilterResults;
+
 }
 
 function mainMenu(person, people) {
