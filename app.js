@@ -84,12 +84,13 @@ function mainMenu(person, people) {
     switch (mainMenuUserActionChoice) {
         case "info":
             //! TODO
-            // displayPersonInfo(person);
+             displayPersonInfo(person);
+             console.log('Display full person information.')
             break;
         case "family":
             //! TODO
-            // let personFamily = findPersonFamily(person, people);
-            // displayPeople('Family', personFamily);
+             let personFamily = findPersonFamily(person, people);
+             displayPeople('Family', personFamily);
             break;
         case "descendants":
             //! TODO
