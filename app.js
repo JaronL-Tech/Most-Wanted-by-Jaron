@@ -64,7 +64,7 @@ function searchByName(people) {
     return fullNameSearchResults;
 }
 function searchByTraits(people) {
-    const traitsTOSearchForString = prompt('Please enter one of the listed traits of the person you are searching for.');
+    const traitsTOSearchForString = validatedPrompt('Please enter one of the listed traits of the person you are searching for.'["EyeColor", 'height', 'weight', 'gender', 'occupation']);
     const eyeColorToSearchfor = prompt('Please Enter desired Eye color of the person you are searching for.');
     const heightToSearchfortrait = parseInt(heightToSearchfortrait);
     const weightToSearchForTrait = parseInt(weightToSearchForTrait);
