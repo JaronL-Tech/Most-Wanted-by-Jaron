@@ -84,18 +84,21 @@ function mainMenu(person, people) {
     switch (mainMenuUserActionChoice) {
         case "info":
             //! TODO
+            let PersonInfo = findPersonInfo(person)
              displayPersonInfo(person);
-             console.log('Display full person information.')
+             console.log('Display person information.');
             break;
         case "family":
             //! TODO
              let personFamily = findPersonFamily(person, people);
              displayPeople('Family', personFamily);
+             console.log('Display family infomation.');
             break;
         case "descendants":
             //! TODO
-            // let personDescendants = findPersonDescendants(person, people);
-            // displayPeople('Descendants', personDescendants);
+             let personDescendants = findPersonDescendants(person, people);
+             displayPeople('Descendants', personDescendants);
+             console.log('Display infomation of Descendants.');
             break;
         case "quit":
             return;
