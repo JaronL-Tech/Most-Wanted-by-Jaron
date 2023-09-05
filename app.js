@@ -64,7 +64,8 @@ function searchByName(people) {
     return fullNameSearchResults;
 }
 function searchByTraits(people) {
-    
+    const traitsTOSearchForString = prompt('Please enter one of the listed traits of the person you are searching for.');
+    const eyeColorToSearchFor = prompt('Please Enter desired Eye color of the person you are searching for.');
 }
 
 function mainMenu(person, people) {
