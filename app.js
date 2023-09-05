@@ -63,6 +63,9 @@ function searchByName(people) {
     const fullNameSearchResults = people.filter(person => (person.firstName.toLowerCase() === firstNameToSearchFor.toLowerCase() && person.lastName.toLowerCase() === lastNameToSearchFor.toLowerCase()));
     return fullNameSearchResults;
 }
+function searchByTraits(people) {
+    
+}
 
 function mainMenu(person, people) {
 
