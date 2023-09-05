@@ -41,7 +41,7 @@ function searchPeopleDataSet(people) {
             break;
         case 'traits':
             //! TODO
-            // results = searchByTraits(people);
+            results = searchByTraits(people);
             break;
         default:
             return searchPeopleDataSet(people);
