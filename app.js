@@ -67,28 +67,28 @@ function searchByTraits(people) {
     const traitsTOSearchForString = validatedPrompt('Please enter one of the listed traits of the person you are searching for.'["EyeColor", 'height', 'weight', 'gender', 'occupation', 'quit']);
     switch (traitsTOSearchForString){
         case "EyeColor":
-            let traitsEyeColor = findtraitsEyeColor(traits)
-            displaytraitsEyeColor(traits);
+            let PersonEyeColor = findPersonEyeColor(person)
+            displaytraitsEyeColor(person);
             console.log('Please enter desired  Eye Color.');
             break;
             case "height":
-                let traitsheight = findtraitsheight(traits)
-                displaytraitsheight(traits);
+                let Personheight = findtraitsheight(person)
+                displaytraitsheight(person);
                 console.log('Please enter desired height.');
                 break;
                 case "weight":
-                    let traitsweight = findtraitsweight(traits)
-                    displaytraitsweight(traits);
+                    let Personweight = findtraitsweight(person)
+                    displaytraitsweight(Personweight);
                     console.log('Please entered desired weight of target.');
                     break;
                     case "Gender":
-                        let traitsGender = findtraitsGender(traits)
-                        displaytraitsgender(traits);
+                        let personGender = findtraitsGender(person)
+                        displaytraitsgender(person);
                         console.log('Please enter the person gender.');
                         break;
                         case "occupation":
-                            let traitsOccupation = findtraitsOccupation(traits)
-                            displaytraitsoccupation(traits);
+                            let personOccupation = findtraitsOccupation(person)
+                            displaytraitsoccupation(Person);
                             console.log('Please enter the person Occupation.');
                             break;
                             case "quit":
