@@ -64,7 +64,7 @@ function searchByName(people) {
     return fullNameSearchResults;
 }
 function searchByTraits(people) {
-    const traitsTOSearchForString = validatedPrompt('Please enter one of the listed traits of the person you are searching for.'["EyeColor", 'height', 'weight', 'gender', 'occupation']);
+    const traitsTOSearchForString = validatedPrompt('Please enter one of the listed traits of the person you are searching for.'["EyeColor", 'height', 'weight', 'gender', 'occupation', 'quit']);
     switch (traitsTOSearchForString){
         case "EyeColor":
             let traitsEyeColor = findtraitsEyeColor(traits)
@@ -81,6 +81,20 @@ function searchByTraits(people) {
                     displaytraitsweight(traits);
                     console.log('Please entered desired weight of target.');
                     break;
+                    case "Gender":
+                        let traitsGender = findtraitsGender(traits)
+                        displaytraitsgender(traits);
+                        console.log('Please enter the person gender.');
+                        break;
+                        case "occupation":
+                            let traitsOccupation = findtraitsOccupation(traits)
+                            displaytraitsoccupation(traits);
+                            console.log('Please enter the person Occupation.');
+                            break;
+                            case "quit":
+                                return;
+                            default:
+                                alert('Invalid input. Please try again.');
 
     }
     
