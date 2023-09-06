@@ -63,32 +63,32 @@ function searchByName(people) {
     const fullNameSearchResults = people.filter(person => (person.firstName.toLowerCase() === firstNameToSearchFor.toLowerCase() && person.lastName.toLowerCase() === lastNameToSearchFor.toLowerCase()));
     return fullNameSearchResults;
 }
-function searchByTraits(people) {
-    const traitsTOSearchForString = validatedPrompt('Please enter one of the listed traits of the person you are searching for.'["EyeColor", 'height', 'weight', 'gender', 'occupation', 'quit']);
+function searchByTraits(person, people) {
+    const traitsTOSearchForString = prompt('Please enter one of the listed traits of the person you are searching for.'["EyeColor", 'height', 'weight', 'gender', 'occupation', 'quit']);
     switch (traitsTOSearchForString){
         case "EyeColor":
             let PersonEyeColor = findPersonEyeColor(person)
-            displaytraitsEyeColor(person);
+            displayPersonEyeColor(person);
             console.log('Please enter desired  Eye Color.');
             break;
             case "height":
-                let Personheight = findtraitsheight(person)
-                displaytraitsheight(person);
+                let Personheight = findPersonheight(person)
+                displayPersonheight(person);
                 console.log('Please enter desired height.');
                 break;
                 case "weight":
-                    let Personweight = findtraitsweight(person)
-                    displaytraitsweight(Personweight);
+                    let Personweight = findPersonweight(person)
+                    displayPersonweight(Personweight);
                     console.log('Please entered desired weight of target.');
                     break;
                     case "Gender":
-                        let personGender = findtraitsGender(person)
-                        displaytraitsgender(person);
+                        let personGender = findPersonGender(person)
+                        displayPersongender(person);
                         console.log('Please enter the person gender.');
                         break;
                         case "occupation":
-                            let personOccupation = findtraitsOccupation(person)
-                            displaytraitsoccupation(Person);
+                            let personOccupation = findPersonOccupation(person)
+                            displayPersonoccupation(Person);
                             console.log('Please enter the person Occupation.');
                             break;
                             case "quit":
@@ -96,6 +96,8 @@ function searchByTraits(people) {
                             default:
                                 alert('Invalid input. Please try again.');
   }
+                        return searchByTraits(person, people);
+
 }
 
 function mainMenu(person, people) {
