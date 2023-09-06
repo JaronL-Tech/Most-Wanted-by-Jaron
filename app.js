@@ -65,12 +65,25 @@ function searchByName(people) {
 }
 function searchByTraits(people) {
     const traitsTOSearchForString = validatedPrompt('Please enter one of the listed traits of the person you are searching for.'["EyeColor", 'height', 'weight', 'gender', 'occupation']);
-    const eyeColorToSearchfor = prompt('Please Enter desired Eye color of the person you are searching for.');
-    const heightToSearchfortrait = parseInt(heightToSearchfortrait);
-    const weightToSearchForTrait = parseInt(weightToSearchForTrait);
-    const genderToSearchForTrait = prompt("Please enter the gender of the person you are looking for.")
-    const traitsFilterResults = people.filter(person => person.traits.toLowerCase() === traitsTOSearchForString.toLowerCase() && heightToSearchfortrait.toLowerCase() === eyeColorToSearchfor.toLowerCase() === weightToSearchForTrait.toLowerCase() === genderToSearchForTrait.toLowerCase());
-    return traitsFilterResults;
+    switch (traitsTOSearchForString){
+        case "EyeColor":
+            let traitsEyeColor = findtraitsEyeColor(traits)
+            displaytraitsEyeColor(traits);
+            console.log('Please enter desired  Eye Color.');
+            break;
+            case "height":
+                let traitsheight = findtraitsheight(traits)
+                displaytraitsheight(traits);
+                console.log('Please enter desired height.');
+                break;
+                case "weight":
+                    let traitsweight = findtraitsweight(traits)
+                    displaytraitsweight(traits);
+                    console.log('Please entered desired weight of target.');
+                    break;
+
+    }
+    
 
 }
 
