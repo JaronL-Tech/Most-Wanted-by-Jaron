@@ -95,10 +95,7 @@ function searchByTraits(people) {
                                 return;
                             default:
                                 alert('Invalid input. Please try again.');
-
-    }
-    
-
+  }
 }
 
 function mainMenu(person, people) {
