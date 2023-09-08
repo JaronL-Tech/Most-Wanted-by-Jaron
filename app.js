@@ -63,41 +63,36 @@ function searchByName(people) {
     const fullNameSearchResults = people.filter(person => (person.firstName.toLowerCase() === firstNameToSearchFor.toLowerCase() && person.lastName.toLowerCase() === lastNameToSearchFor.toLowerCase()));
     return fullNameSearchResults;
 }
-function searchByTraits(person, people) {
-    const traitsTOSearchForString = prompt('Please enter one of the listed traits of the person you are searching for.'["EyeColor", 'height', 'weight', 'gender', 'occupation', 'quit']);
+function searchByTraits(people) {
+    const traitsTOSearchForString = validatedPrompt('Please enter one of the listed traits of the person you are searching for.', ["eyeColor", 'height', 'weight', 'gender', 'occupation', 'quit']);
     switch (traitsTOSearchForString){
-        case "EyeColor":
-            let PersonEyeColor = findPersonEyeColor(person)
-            displayPersonEyeColor(person);
-            console.log('Please enter desired  Eye Color.');
+        case "eyecolor":
+            let peopleEyeColor = findPersonEyeColor(people)
+            displayPeople("People by Eye Color", peopleEyeColor);
             break;
-            case "height":
-                let Personheight = findPersonheight(person)
-                displayPersonheight(person);
-                console.log('Please enter desired height.');
-                break;
-                case "weight":
-                    let Personweight = findPersonweight(person)
-                    displayPersonweight(Personweight);
-                    console.log('Please entered desired weight of target.');
-                    break;
-                    case "Gender":
-                        let personGender = findPersonGender(person)
-                        displayPersongender(person);
-                        console.log('Please enter the person gender.');
-                        break;
-                        case "occupation":
-                            let personOccupation = findPersonOccupation(person)
-                            displayPersonoccupation(Person);
-                            console.log('Please enter the person Occupation.');
-                            break;
-                            case "quit":
-                                return;
-                            default:
-                                alert('Invalid input. Please try again.');
+        case "height":
+            let peopleheight = findPersonheight(people)
+            displayPeople("People by Height", peopleheight);
+            break;
+        case "weight":
+            let peopleweight = findPersonweight(people)
+            displayPeople("People by Weight", peopleweight);
+            break;
+        case "gender":
+            let peopleGender = findPersonGender(people)
+            displayPeople("People by Gender", peopleGender);
+            break;
+        case "occupation":
+            let peopleOccupation = findPersonOccupation(people)
+            displayPeople("People by Occupation", peopleOccupation);
+            break;
+        case "quit":
+            return;
+        default:
+            alert('Invalid input. Please try again.');
+            return searchByTraits(people);
   }
-                        return searchByTraits(person, people);
-
+  
 }
 
 function mainMenu(person, people) {
@@ -172,4 +167,72 @@ function exitOrRestart(people) {
             return exitOrRestart(people);
     }
 
+}
+
+function findPersonEyeColor(people){
+    let eyeColorValue = validatedPrompt("What eye color would you like to search for? ", ["brown", "blue", "hazel", "black", "green"])
+    let peopleByEyeColor = people.filter(function (person) {
+        if (person.eyeColor === eyeColorValue) {
+            return true;
+        } else {
+            return false;
+        }
+    })
+    return peopleByEyeColor;
+}
+
+{   
+    function findPersonGender(people){
+    let GenderValue = validatedPrompt("What Gender would you like to search for? ", ["Male", "Female"])
+    let PeoplebyGender = people.filter(function (person) {
+        if (person.Gender === GenderValue) {
+            return true;
+        } else {
+            return false;
+        }
+    })
+    return PeoplebyGender;}
+{
+   
+{
+    function findPersonheight(people){
+    let HeightValue = parseInt("What height are you looking for? ", [71, 65, 76, 62, 70, 72, 66, 59, 69, 76, 74, 66, 58, 62, 61, 74, 71, 70, 63, 70, 67, 67])
+    let Peoplebyheight = people.filter(function (person) {
+        if (person.height === HeightValue) {
+            return true;
+        } else {
+            return false;
+        }
+    })
+    return Peoplebyheight;
+}
+    
+    {
+        function findPersonweight(people){
+            let WeightValue = parseInt("Enter weight? ", [175, 162, 250, 115, 207, 256, 170, 137, 199, 205, 118, 179, 156, 235, 112, 184, 249, 187, 241, 110, 100, 100 ])
+            let Peoplebyweight = people.filter(function (person) {
+                if (person.Weight === WeightValue) {
+                    return true;
+                } else {
+                    return false;
+                }
+            })
+            return Peoplebyweight;
+    }
+}
+{ 
+    function findPersonOccupation(people){
+        let OccupationValue = validatedPrompt("What occupation are you looking for?", ["Progammer", "assistant", "landscaper", "Nurse", "Student", "architect","Doctor", "Politician" ])
+        let Peoplebyoccupation = people.filter(function (person){
+            if (person.Occupation === OccupationValue) {
+                return true;
+            } else {
+                return false;
+            }
+        })
+        return Peoplebyoccupation;
+    }
+
+} {
+    
 }
